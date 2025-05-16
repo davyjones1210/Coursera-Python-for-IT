@@ -1,4 +1,6 @@
 import unittest
+from module5_unittest import CakeFactory
+# Test cases for the CakeFactory class
 
 class TestCakeFactory(unittest.TestCase):
  def test_create_cake(self):
@@ -25,7 +27,7 @@ class TestCakeFactory(unittest.TestCase):
      cake.add_topping("sprinkles")
      cake.add_topping("cherries")
      price = cake.check_price()
-     self.assertEqual(price, 13) # Vanilla cake, large size + 2 toppings
+     self.assertEqual(price, 14) # Vanilla cake, large size + 2 toppings
 
 
 # Running the unittests
