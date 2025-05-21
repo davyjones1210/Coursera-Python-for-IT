@@ -1,0 +1,21 @@
+     23 system-updater[199481]: DEBUG Command exited with status: 0
+
+     19 system-updater[46682]: DEBUG Command exited with status: 0
+
+     16 system-updater[175060]: DEBUG Command exited with status: 0
+
+     11 /usr/bin/lock: called by /bin/bash for . uid 0, euid 0.
+
+     11 network-manager-dhclient-hooks: Dispatching run of '/etc/dhcp/dhclient-exit-hooks.d/hostname' ...
+
+Processing: /var/log/Xorg.0.log
+
+     87 Printing DDC gathered Modelines:
+
+     87 Modeline "1920x1080"x0.0  141.00  1920 1936 1952 2104  1080 1083 1097 1116 -hsync -vsync (67.0 kHz eP)
+
+     87 EDID vendor "AUO", prod id 5949
+
+     78 vendor "AUO", prod id 5949
+
+     78 DDC gathered Modelines:
