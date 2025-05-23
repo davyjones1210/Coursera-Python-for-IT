@@ -1,0 +1,17 @@
+git log -p
+
+git log
+
+git log --stat
+
+git diff
+
+git diff
+
+git diff --staged
+
+git commit -m 'Add a message when everything is ok'
+
+
+
+
