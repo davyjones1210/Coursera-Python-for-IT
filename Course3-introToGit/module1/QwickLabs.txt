@@ -1,0 +1,40 @@
+sudo apt update
+
+sudo apt install git
+
+git --version
+
+mkdir my-git-repo
+
+cd my-git-repo
+
+git init
+
+git config --global user.name "Name"
+
+git config --global user.email "user@example.com"
+
+nano README
+
+This is my first repository.
+
+git status
+
+git add README
+
+git commit
+
+This is my first commit!
+
+Once you have entered the commit message, save it by pressing Ctrl-o and Enter key. To exit click Ctrl-x.
+
+Or on Windows GIT BASH: Esc, Ctrl-x, Ctrl-C, :wp
+
+git diff README
+
+git status
+
+git commit -m "This is my second commit."
+
+git log
+
