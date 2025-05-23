@@ -1,0 +1,12 @@
+cd checks
+ls -l
+
+git status
+
+atom disk_usage.py 
+git status
+
+git commit -m 'Add periods to the end of sentences.'
+
+git status
+
