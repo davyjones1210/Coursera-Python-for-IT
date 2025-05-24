@@ -1,0 +1,10 @@
+cd checks
+git log -1
+
+git log -2
+
+git show <commit id>
+
+git show <commit id>
+
+git revert <commit id>

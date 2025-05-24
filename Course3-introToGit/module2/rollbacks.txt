@@ -1,0 +1,15 @@
+cd scripts
+atom all_checks.py
+
+git commit -a -m 'Add call to disk_full function'
+
+./all_checks.py
+
+git revert HEAD
+
+If Vim Opens and You Want to Edit
+Type i to enter insert mode.
+Edit your message.
+Press Esc, then type :wq and press Enter to save and quit.
+
+git log -p -2
