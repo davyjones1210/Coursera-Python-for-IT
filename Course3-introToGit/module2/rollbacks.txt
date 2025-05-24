@@ -1,0 +1,10 @@
+cd scripts
+atom all_checks.py
+
+git commit -a -m 'Add call to disk_full function'
+
+./all_checks.py
+
+git revert HEAD
+
+git log -p -2
