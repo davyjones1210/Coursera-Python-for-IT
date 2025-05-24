@@ -1,0 +1,18 @@
+cd scripts/
+touch auto-update.py
+touch gather-information.sh
+ls -l
+
+git add auto-update.py
+git commit -m 'Add two new scripts'
+
+git add gather-information.sh
+git commit --amend
+
+Add two new scripts.
+
+Add two new scripts.
+
+gather-information.sh will collect information in case of errors.
+auto-update.py will run daily to update computers automatically.
+
