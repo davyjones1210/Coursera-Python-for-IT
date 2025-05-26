@@ -1,0 +1,11 @@
+cd checks/
+git branch
+
+git branch new-feature
+git branch
+
+git checkout new-feature
+
+git checkout -b even-better-feature
+
+cat free_memory.py 
