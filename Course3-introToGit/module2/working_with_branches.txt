@@ -1,0 +1,17 @@
+cd checks
+git status
+
+ls -l
+
+git checkout master
+git log -2
+
+ls -l
+
+git branch
+
+git branch -d new-feature 
+
+git branch
+
+git branch -d even-better-feature 
