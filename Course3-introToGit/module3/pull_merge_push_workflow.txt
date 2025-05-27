@@ -10,7 +10,7 @@ git pull
 
 git log --graph --oneline --all
 
-git log -p origin/master
+git log -p origin/main
 
 git add all_checks.py 
 git commit
