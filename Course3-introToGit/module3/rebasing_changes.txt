@@ -1,0 +1,22 @@
+git checkout master
+
+git pull
+
+git log --graph --oneline --all
+
+git checkout refactor
+
+git rebase master
+
+git log --graph --oneline
+
+git checkout master
+
+git merge refactor
+
+git push --delete origin refactor
+
+git branch -d refactor
+
+git push
+

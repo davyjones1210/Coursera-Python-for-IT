@@ -1,0 +1,21 @@
+git checkout -b refactor
+
+atom all_checks.py
+
+./all_checks.py 
+
+git commit -a -m 'Create wrapper function for check_disk_full'
+
+atom all_checks.py
+
+./all_checks.py 
+
+git commit -a -m 'Iterate over a list of checks and messages to avoid code duplication'
+
+atom all_checks.py
+
+./all_checks.py 
+
+git commit -a -m 'Allow printing more than one error message'
+
+git push -u origin refactor
