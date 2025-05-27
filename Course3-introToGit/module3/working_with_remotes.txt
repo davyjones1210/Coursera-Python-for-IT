@@ -1,0 +1,9 @@
+cd health-checks/
+git remote -v
+
+git remote show origin
+
+git branch -r
+
+git status
+
