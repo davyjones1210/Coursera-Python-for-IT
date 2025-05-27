@@ -1,0 +1,27 @@
+git commit -a -m 'Add comment to main()'
+
+git checkout even-better-feature 
+
+#!/usr/bin/env python3
+  
+def main():
+    print("Everything ok.")
+
+main()
+
+git commit -a -m 'Print everything ok'
+
+git checkout master
+
+git merge even-better-feature 
+
+git status
+
+*merge changes
+
+git add free_memory.py
+git status
+
+git commit
+
+git log --graph --oneline
