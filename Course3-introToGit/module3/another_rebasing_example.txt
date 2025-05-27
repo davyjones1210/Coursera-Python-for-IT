@@ -1,0 +1,18 @@
+atom all_checks.py
+
+git commit -a -m 'Add a simple network connectivity check'
+
+git fetch
+
+git rebase origin/master
+
+atom health_checks.py
+
+./health_checks.py 
+
+git add health_checks.py 
+git rebase --continue
+
+git log --graph --oneline
+
+git push
