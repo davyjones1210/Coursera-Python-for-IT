@@ -1,0 +1,6 @@
+git branch
+
+git merge even-better-feature 
+
+git log
+
