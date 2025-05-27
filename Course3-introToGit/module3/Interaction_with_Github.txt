@@ -1,0 +1,21 @@
+git clone https://github.com/redquinoa/health-checks.git
+
+cd health-checks/
+ls -l
+
+atom README.md
+# health-checks
+Scripts that check the health of my computers
+
+This repo will be populated with lots of fancy checks. 
+
+git commit -a -m "Add one more line to README.md"
+
+git push
+
+git config --global credential.helper cache
+
+git pull
+
+git pull
+
