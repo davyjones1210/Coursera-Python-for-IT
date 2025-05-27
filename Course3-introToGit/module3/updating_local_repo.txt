@@ -1,0 +1,7 @@
+git pull
+
+git -log -p -1
+
+git remote show origin
+
+git checkout experimental
