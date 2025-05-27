@@ -1,0 +1,14 @@
+atom all_checks.py
+
+git add -p
+
+git commit -m 'Rename min_absolute to min_gb, use parameter names'
+
+git push
+
+git pull
+
+git log --graph --oneline --all
+
+git log -p origin/master
+
