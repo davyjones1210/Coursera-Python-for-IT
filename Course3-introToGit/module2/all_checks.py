@@ -9,7 +9,7 @@ def check_reboot():
     return os.path.exists("/run/reboot-required")
 
 def check_disk_full(disk, mmin_absolute, min_percent):  
-    """Returns True if there isn’t enough disk space, False otherwise."""  
+    """Returns True if there isn’t enough disk space, False otherwise. Adding line in experimental branch"""  
     du = shutil.disk_usage(disk)  
     # Calculate the percentage of free space
   
