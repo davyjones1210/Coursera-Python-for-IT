@@ -12,3 +12,9 @@ git log --graph --oneline --all
 
 git log -p origin/master
 
+git add all_checks.py 
+git commit
+
+git push
+
+git log --graph --oneline
