@@ -1,0 +1,34 @@
+/import_data$ cat contacts.csv | ./import.py --server test
+
+
+
+/import_data$ wc -l contacts.csv 
+
+
+
+/import_data$ head -15 contacts.csv 
+
+
+
+/import_data$ tail -20 contacts.csv 
+
+
+/import_data$ head -50 contacts.csv | ./import.py --server test
+
+
+/import_data$ head -50 contacts.csv | head -25 | ./import.py --server test
+
+
+/import_data$ head -50 contacts.csv | tail -25 | ./import.py --server test
+
+
+/import_data$ head -50 contacts.csv | tail -25 | head -13 | ./import.py --server test
+
+
+/import_data$ head -50 contacts.csv | tail -25 | tail -12 | head -6 | ./import.py --server test
+
+
+/import_data$ head -50 contacts.csv | tail -25 | tail -12 | head -6 | head -3 
+
+
+/import_data$ cat contacts.csv | ./import.py --server test

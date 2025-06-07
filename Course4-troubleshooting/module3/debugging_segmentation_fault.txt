@@ -1,0 +1,10 @@
+./example
+
+ulimit -c unlimited
+./example 
+
+
+ls -l core
+
+gdb -c core example
+

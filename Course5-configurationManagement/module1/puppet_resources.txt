@@ -1,0 +1,19 @@
+class sysctl {
+
+  # Make sure the directory exists, some distros don't have it
+  file { '/etc/sysctl.d':
+    ensure => directory,
+  }
+
+}
+
+
+class timezone {
+
+      file { '/etc/timezone':
+        ensure  => file,
+        content => "UTC\n",
+        replace => true,
+      }
+
+}

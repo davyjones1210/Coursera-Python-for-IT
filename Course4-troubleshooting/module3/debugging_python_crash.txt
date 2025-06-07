@@ -1,0 +1,9 @@
+cat new_products.csv 
+
+./update_products.py new_products.csv
+#This throws an error
+
+pdb3 update_products.py new_products.csv
+
+./update_products.py new_products.csv
+
