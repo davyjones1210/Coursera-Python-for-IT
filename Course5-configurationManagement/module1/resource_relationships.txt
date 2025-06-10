@@ -1,0 +1,64 @@
+vim ntp.pp
+
+class ntp {
+  package { 'ntp':
+    ensure => latest,
+  } 
+  file { '/etc/ntp.conf':
+    source => '/home/user/ntp.conf',
+    replace => true,
+    require => Package['ntp'],
+    notify  => Service['ntp'],
+  }
+  service { 'ntp':
+    enable  => true,
+    ensure  => running,
+    require => File['/etc/ntp.conf'],
+  }
+}
+
+include ntp
+
+sudo puppet apply -v ntp.pp
+
+vim ntp.conf
+
+driftfile /var/lib/ntp/ntp.drift
+statistics loopstats peerstats clockstats
+filegen loopstats file loopstats type day enable
+filegen peerstats file peerstats type day enable
+filegen clockstats file clockstats type day enable
+
+server 0.pool.ntp.org
+server 1.pool.ntp.org
+server 2.pool.ntp.org
+server 3.pool.ntp.org
+
+restrict -4 default kod notrap nomodify nopeer noquery limited
+restrict -6 default kod notrap nomodify nopeer noquery limited
+
+restrict 127.0.0.1
+restrict ::1
+
+restrict source notrap nomodify noquery
+
+driftfile /var/lib/ntp/ntp.drift
+statistics loopstats peerstats clockstats
+filegen loopstats file loopstats type day enable
+filegen peerstats file peerstats type day enable
+filegen clockstats file clockstats type day enable
+
+server time1.google.com
+server time2.google.com
+server time3.google.com
+server time4.google.com
+
+restrict -4 default kod notrap nomodify nopeer noquery limited
+restrict -6 default kod notrap nomodify nopeer noquery limited
+
+restrict 127.0.0.1
+restrict ::1
+
+restrict source notrap nomodify noquery
+
+sudo puppet apply -v ntp.pp

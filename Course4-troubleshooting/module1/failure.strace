@@ -1,0 +1,2 @@
+execve("./best_search_exercise.py", ["./best_search_exercise.py"], 0x7fff0267fa10 /* 28 vars */) = -1 ENOEXEC (Exec format error)
++++ exited with 1 +++

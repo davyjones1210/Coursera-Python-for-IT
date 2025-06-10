@@ -36,7 +36,7 @@ See you there!
 
 def send_message(message, emails):
     """Sends the message to the specified emails."""
-    smtp = smtplib.SMTP('localhost')    
+    smtp = smtplib.SMTP('localhost', 1025)   
     for email in emails.split(','):
         message['To'] = email
         smtp.send_message(message)
