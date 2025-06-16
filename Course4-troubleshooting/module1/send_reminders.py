@@ -5,6 +5,7 @@ import datetime
 import email
 import smtplib
 import sys
+import csv
 
 def usage():
     print("send_reminders: Send meeting reminders")
@@ -33,11 +34,22 @@ See you there!
 """)
     return message
 
+def read_names(contacts):
+    names = {}
+    with open(contacts) as csvfile:
+        reader = csv.reader(csvfile)
+        for row in reader:
+            names[row[0]] = row[1]
+    return names
 
-def send_message(message, emails):
+def send_message(date, title, emails, contacts):
     """Sends the message to the specified emails."""
-    smtp = smtplib.SMTP('localhost', 1025)   
+    smtp = smtplib.SMTP('localhost', 1025)  
+    names = read_names(contacts) 
     for email in emails.split(','):
+        name = names[email]
+        message = message_template(date, title, name)
+        message['From'] = 'nreply@example.com'
         message['To'] = email
         smtp.send_message(message)
     smtp.quit()

@@ -1,0 +1,14 @@
+tree modules/
+
+sudo apt install puppet-module-puppetlabs-apache
+
+cd /usr/share/puppet/modules.available/puppetlabs-apache
+ls -l
+
+ls -l manifests/
+
+vim webserver.pp
+include ::apache
+
+sudo puppet apply -v webserver.pp
+
