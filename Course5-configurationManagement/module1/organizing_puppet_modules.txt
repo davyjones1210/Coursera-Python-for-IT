@@ -12,3 +12,12 @@ include ::apache
 
 sudo puppet apply -v webserver.pp
 
+sudo cp webserver.pp /home/davy_jones
+
+cd "/mnt/c/Python Projects/Coursera-Python-for-IT/Course5-configurationManagement/module1"
+
+sudo cp ntp.conf ntp.pp /usr/share/puppet/ntp/
+
+sudo mkdir -p /usr/share/puppet/ntp
+
+mv ntp modules/
