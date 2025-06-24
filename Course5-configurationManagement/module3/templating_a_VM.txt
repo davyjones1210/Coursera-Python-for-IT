@@ -1,0 +1,6 @@
+gcloud init
+
+webserver-template ws1 ws2 ws3 ws4 ws5
+
+gcloud compute instances create ws1 ws2 ws3 ws4 ws5 \
+  --source-instance-template=webserver-template --zone=northamerica-northeast2-a
