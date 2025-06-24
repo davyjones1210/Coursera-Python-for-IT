@@ -1,0 +1,127 @@
+cd /etc/puppet/code/environments/production/modules/packages
+
+cat manifests/init.pp
+
+class packages {
+    package { 'python-requests':
+        ensure => installed,
+    }
+
+}
+
+sudo chmod 646 manifests/init.pp
+
+The complete init.pp file would now look similar to the below file:
+
+class packages {
+   package { 'python-requests':
+       ensure => installed,
+   }
+   if $facts[os][family] == "Debian" {
+     package { 'golang':
+       ensure => installed,
+     }
+  }
+   if $facts[os][family] == "RedHat" {
+     package { 'nodejs':
+       ensure => installed,
+     }
+  }
+}
+
+
+gcloud compute instances describe linux-instance --zone="Zone" --format='get(networkInterfaces[0].accessConfigs[0].natIP)'
+
+Now manually run the Puppet client on your linux-instance VM instance terminal:
+sudo puppet agent -v --test
+
+Now verify whether the golang package was installed on this instance. This being an machine of the Debian family should have golang installed. Use the following command to verify this:
+
+apt policy golang
+
+
+cd /etc/puppet/code/environments/production/modules/machine_info
+
+cat manifests/init.pp
+
+The complete manifests/init.pp file should now look like this:
+class machine_info {
+  if $facts[kernel] == "windows" {
+       $info_path = "C:\Windows\Temp\Machine_Info.txt"
+   } else {
+       $info_path = "/tmp/machine_info.txt"
+   }
+ file { 'machine_info':
+       path => $info_path,
+       content => template('machine_info/info.erb'),
+   }
+}
+
+
+cat templates/info.erb
+
+sudo chmod 646 templates/info.erb
+
+The template should now look like this:
+Machine Information
+-------------------
+Disks: <%= @disks %>
+Memory: <%= @memory %>
+Processors: <%= @processors %>
+Network Interfaces: <%= @interfaces %>
+}
+
+Now manually run the Puppet client on your linux-instance VM instance terminal:
+sudo puppet agent -v --test
+
+cat /tmp/machine_info.txt
+
+sudo mkdir -p /etc/puppet/code/environments/production/modules/reboot/manifests
+
+cd /etc/puppet/code/environments/production/modules/reboot/manifests
+
+sudo touch init.pp
+
+sudo nano init.pp
+
+In this file, you'll start by creating a class called reboot.
+
+The way to reboot a computer depends on the OS that it's running. So, you'll set a variable that has one of the following reboot commands, based on the kernel fact:
+
+shutdown /r on windows
+
+shutdown -r now on Darwin (macOS)
+
+reboot on Linux.
+
+Hence, add the following snippet in the file init.pp:
+The complete reboot/manifests/init.pp should now look like this:
+class reboot {
+  if $facts[kernel] == "windows" {
+    $cmd = "shutdown /r"
+  } elsif $facts[kernel] == "Darwin" {
+    $cmd = "shutdown -r now"
+  } else {
+    $cmd = "reboot"
+  }
+  if $facts[uptime_days] > 30 {
+    exec { 'reboot':
+      command => $cmd,
+     }
+   }
+}
+
+sudo nano /etc/puppet/code/environments/production/manifests/site.pp 
+
+Add an extra line that includes the reboot module.
+
+The file /etc/puppet/code/environments/production/manifests/site.pp should now look like this:
+
+node default {
+   class { 'packages': }
+   class { 'machine_info': }
+   class { 'reboot': }
+}
+
+Now manually run the Puppet client on your linux-instance VM instance terminal:
+sudo puppet agent -v --test
