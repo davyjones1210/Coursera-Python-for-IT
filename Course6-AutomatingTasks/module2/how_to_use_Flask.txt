@@ -1,0 +1,26 @@
+No expertise in front-end development is required. Understanding HTML coding is helpful when using Flask; however, knowing CSS and Javascript will help even more to improve how your app looks and functions.
+
+# This is not an excutable code block
+from flask import Flask
+
+app = Flask("myapp")
+
+@app.route('/')
+def hello_world():
+    return 'Hello, World!'
+
+Next, we run the app with the flask command:
+$ flask --app hello run
+ * Serving Flask app 'hello'
+ * Running on http://127.0.0.1:5000 (Press CTRL+C to quit)
+
+Now, we can make our app a bit more interactive. Let’s add a parameter so the app can greet you by name:
+
+
+from flask import Flask
+
+app = Flask("hello")
+
+@app.route('/hello/<name>')
+def hello_world(name):
+    return f'Hello, {name}!'
